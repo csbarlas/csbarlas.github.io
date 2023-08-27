@@ -331,9 +331,12 @@ kbd {
 
 <body>
 
-<h1 id="toc_0">Using MonoGame on Apple Silicon (Aug. 2023)</h1>
+<h1 id="toc_0">Using MonoGame on Apple Silicon (August 2023)</h1>
 
 <p>The Mac platform has had four major transitions in its lifetime so far: the switch from the Motorola 68000 to PowerPC processors, the switch from Mac OS 9 to Mac OS X (macOS), the switch from PowerPC to Intel processors, and the last being where we are now: the switch from Intel to Apple Silicon processors.</p>
+
+<p><img src="appleintel.jpg" alt="">
+<p style="text-align: center;"><em>January 10, 2006: Intel CEO Paul Otellini delivers the first Intel Silicon Wafer to Apple CEO Steve Jobs</em></p></p>
 
 <p>Most software has transitioned extremely well, and MonoGame was almost one of them. MonoGame can use the ARM version of the .NET SDK to compile and run games, but the MonoGame Content Builder Editor uses a binary only present in the x64 version of the .NET SDK at this time. Our solution is to install the x64 version of the .NET SDK and use Rosetta 2 emulation to run it.</p>
 
@@ -358,7 +361,7 @@ kbd {
 
 <div><pre><code class="language-none">dotnet --info</code></pre></div>
 
-<p>which should reuslt in the following response:
+<p>which should result in the following response:
 <img src="dotnet%20not%20found.png" alt=""></p>
 
 <p>If an ARM version of dotnet is already installed
@@ -369,7 +372,7 @@ kbd {
 <p>Download the x64 version of .NET 6 for macOS by <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0">going to Microsoft&#39;s website</a>.
 <img src="download%20net6.png" alt=""></p>
 
-<p>Run the .NET installer. When the system asks to install Rosetta, accept then continue the installation. Once the install is complete you may move the installer disk image to the trash.
+<p>Run the .NET installer. The system may ask to install Rosetta, please accept this prompt. If you do not see this prompt that means you previously installed Rosetta on your machine. Once the install is complete you may move the installer disk image to the trash.
 <img src="rosetta%20prompt.png" alt=""></p>
 
 <p>If your Terminal app is still open, please restart it. You will now find that if you try to reinvoke the
@@ -396,7 +399,7 @@ sudo ln -s /usr/local/share/dotnet/x64/dotnet /usr/local/bin</code></pre></div>
 
 <p><img src="x64%20dotnet%20info.png" alt=""></p>
 
-<h2 id="toc_4">Step 3. Installing Visual Studio for Mac 2022</h2>
+<h3 id="toc_4">Step 3. Installing Visual Studio for Mac 2022</h3>
 
 <p>Please download Visual Studio for Mac 2022 by going to <a href="https://visualstudio.microsoft.com/vs/mac/">Microsoft&#39;s website</a> and hitting the download button at the top of the page. Once the download is complete, please run the installer.</p>
 
@@ -404,7 +407,7 @@ sudo ln -s /usr/local/share/dotnet/x64/dotnet /usr/local/bin</code></pre></div>
 
 <p><img src="vs%20installer.png" alt=""></p>
 
-<h2 id="toc_5">Step 4. Installing MonoGame</h2>
+<h3 id="toc_5">Step 4. Installing MonoGame</h3>
 
 <p>Download the MonoGame extension for Mac from <a href="https://github.com/MonoGame/MonoGame/releases/tag/v3.8.1_HOTFIX">MonoGame&#39;s GitHub page</a>.</p>
 
@@ -420,9 +423,14 @@ sudo ln -s /usr/local/share/dotnet/x64/dotnet /usr/local/bin</code></pre></div>
 
 <p><img src="new%20project%20prompt.png" alt=""></p>
 
-<h2 id="toc_6">Step 5. Running the MonoGame Content Builder Editor</h2>
+<h3 id="toc_6">Step 5. Running a MonoGame Project</h3>
 
-<p>Using the project navigator on the right of the Visual Studio window, go to <code>Content</code> directory of your MonoGame project. There should be a <code>Content.mcgb</code> file that handles the content pipeline for your project. Right click this file and select <code>Open With &gt; MCGB Editor</code> and the MonoGame Content Builder Editor should now launch.</p>
+<p>With a new project made and ready to go, it is now time to build the project. Click the play button found in the upper left corner of Visual Studio to start compiling the project. This may take some time. Once completed, the project should launch automatically while your Visual Studio opens some debug windows.
+<img src="running%20game.png" alt=""></p>
+
+<h3 id="toc_7">Step 6. Running the MonoGame Content Builder Editor</h3>
+
+<p>Using the project navigator on the left of the Visual Studio window, go to <code>Content</code> directory of your MonoGame project. There should be a <code>Content.mcgb</code> file that handles the content pipeline for your project. Right click this file and select <code>Open With &gt; MCGB Editor</code> and the MonoGame Content Builder Editor should now launch.</p>
 
 <p>You will notice that the top bar of buttons shown in RB Whitaker&#39;s tutorial is not present, but they are hidden in the Menu Bar. To add content, from the Menu Bar select <code>Edit &gt; Add &gt; Existing Item...</code>. To build content, from the Menu Bar select <code>Build &gt; Build</code>. When you eventually try to build content by launching the MCGB from Visual Studio, you will find that a build error occurs:</p>
 
