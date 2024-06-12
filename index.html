@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
     <script src="https://kit.fontawesome.com/85948f73ba.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         .container {
@@ -43,23 +44,65 @@
             height: auto;
             text-align: center;
         }
+
+        .main {
+            width: 50%;
+            float: right;
+        }
+
+        .photo {
+            margin-right: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .top-bar {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        @media only screen and (orientation: portrait) {
+            /* For mobile phones: */
+            .container.space-between, .title, .main, .photo {
+            width: 100%;
+            }
+
+            .top-bar {
+                flex-direction: column;
+            }
+
+            body {
+                padding: 50px;
+                padding-top: 0px;
+            }
+
+            .title, .container{
+                padding-bottom: 10px;
+            }
+    }
     </style>
 </head>
 
 <body>
+    <div class="top-bar"> 
+            <div style="flex: 1;" class="title">Chris Barlas</div>
 
-    <div class="container space-between">
-        <span class="title">Chris Barlas</span>
-        <span style="padding-left: 150px;"></span>
-        <a href="Barlas_Chris_Resume_SU24_PUB.pdf" target="_blank"><span class="myicon fa-solid fa-file"></span></a>
-        <a href="mailto:contact@chrisbarlas.com" class="remove-mail" target="_blank" rel="noopener noreferrer"><span
-                class="myicon fa-solid fa-at"></span></a>
-        <a href="https://github.com/csbarlas" target="_blank"><span class="myicon fa-brands fa-github"></span></a>
-        <a href="https://www.linkedin.com/in/csbarlas/" target="_blank"><span
-                class="myicon fa-brands fa-linkedin-in"></span></a>
+            <div style="flex: 1" class="container space-between">
+                <a href="Barlas_Chris_Resume_SU24_PUB.pdf" target="_blank"><span class="myicon fa-solid fa-file"></span></a>
+                <a href="mailto:contact@chrisbarlas.com" class="remove-mail" target="_blank" rel="noopener noreferrer"><span
+                        class="myicon fa-solid fa-at"></span></a>
+                <a href="https://github.com/csbarlas" target="_blank"><span class="myicon fa-brands fa-github"></span></a>
+                <a href="https://www.linkedin.com/in/csbarlas/" target="_blank"><span
+                        class="myicon fa-brands fa-linkedin-in"></span></a>
+            </div>
     </div>
+    
+    
     <hr>
-    <div style="width: 50%; float: right;">
+    <div class="main">
         <p>
             Hello! I'm an iOS Engineer @ <a href="https://www.veeva.com/">Veeva Systems</a>. I received my
             bachelor's degree in Computer Science and Engineering
@@ -80,7 +123,7 @@
         </p>
     </div>
 
-    <div style="margin-right: 50%; display: flex; justify-content: center; align-items: center; padding-top: 20px;">
+    <div class="photo">
         <img src="me_1.png">
     </div>
 </body>
