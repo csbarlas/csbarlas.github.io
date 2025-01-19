@@ -1,0 +1,7 @@
+[
+    {
+       "name":"chip8",
+       "url":"/projects/chip8",
+       "desc":"A toy emulator written in c++"
+    }
+]
